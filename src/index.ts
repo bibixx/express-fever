@@ -81,7 +81,7 @@ function makeResponse(res: Response, data: BaseResponse) {
 
 async function getBaseResponse(options: Options): Promise<BaseResponse> {
   const lastRefreshedOnTimeDate = await options.getLastRefreshedOnTime();
-  const lastRefreshedOnTime = lastRefreshedOnTimeDate.getTime() / 1000;
+  const lastRefreshedOnTime = Math.floor(lastRefreshedOnTimeDate.getTime() / 1000);
   return {
     api_version: API_VERSION,
     auth: 1,
@@ -98,3 +98,9 @@ function asyncErrorHandler(handler: (req: Request, res: Response, next: NextFunc
     }
   };
 }
+
+export { Favicon } from "./types/Favicon";
+export { Feed } from "./types/Feed";
+export { Group } from "./types/Group";
+export { Item } from "./types/Item";
+export type { GetItemsOptions } from "./validators/GetItemsOptions";

@@ -4,6 +4,6 @@ export interface Feed {
   title: string;
   url: string;
   siteUrl: string;
-  lastUpdatedOnTime: number;
+  lastUpdatedOnTime: Date;
   groupId: number;
 }

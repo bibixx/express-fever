@@ -6,7 +6,7 @@ export interface UnreadItemsResponse {
 
 export const getUnreadItems = async (options: Options): Promise<UnreadItemsResponse> => {
   const { items } = await options.getItems({});
-  const unreadItems = items.reduce<string[]>((acc, item) => {
+  const unreadItems = items.reduce<number[]>((acc, item) => {
     if (!item.isRead) {
       acc.push(item.id);
     }

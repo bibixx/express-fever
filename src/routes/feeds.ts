@@ -31,7 +31,7 @@ export const feeds = async (options: Options): Promise<FeedsResponse> => {
       url: feed.url,
       site_url: feed.siteUrl,
       is_spark: 0,
-      last_updated_on_time: feed.lastUpdatedOnTime,
+      last_updated_on_time: Math.floor(feed.lastUpdatedOnTime.getTime() / 1000),
     };
   });
 

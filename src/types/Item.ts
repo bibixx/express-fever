@@ -1,5 +1,5 @@
 export interface Item {
-  id: string;
+  id: number;
   feedId: number;
   title: string;
   author: string;

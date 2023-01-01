@@ -6,7 +6,7 @@ export interface SavedItemsResponse {
 
 export const getSavedItems = async (options: Options): Promise<SavedItemsResponse> => {
   const { items } = await options.getItems({});
-  const savedItems = items.reduce<string[]>((acc, item) => {
+  const savedItems = items.reduce<number[]>((acc, item) => {
     if (item.isSaved) {
       acc.push(item.id);
     }

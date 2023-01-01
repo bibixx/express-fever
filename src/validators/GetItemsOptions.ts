@@ -1,9 +1,12 @@
 import { z } from "zod";
 
 export const GetItemsOptions = z.object({
-  maxId: z.string().optional(),
-  sinceId: z.string().optional(),
-  withIds: z.string().optional(),
+  max_id: z.coerce.number().optional(),
+  since_id: z.coerce.number().optional(),
+  with_ids: z
+    .string()
+    .transform((value) => value.split(",").map((s) => Number.parseInt(s.trim(), 10)))
+    .optional(),
 });
 
 export type GetItemsOptions = z.infer<typeof GetItemsOptions>;

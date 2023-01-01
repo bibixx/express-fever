@@ -3,7 +3,7 @@ import { Options } from "../types/Options";
 import { GetItemsOptions } from "../validators/GetItemsOptions";
 
 interface ResponseItem {
-  id: string;
+  id: number;
   feed_id: number;
   title: string;
   author: string;
@@ -31,7 +31,7 @@ export const items = async (options: Options, getItemsOptions: GetItemsOptions):
       url: item.url,
       is_saved: item.isSaved ? 1 : 0,
       is_read: item.isRead ? 1 : 0,
-      created_on_time: item.createdOnTime.getTime() / 1000,
+      created_on_time: Math.floor(item.createdOnTime.getTime() / 1000),
     };
   });
 

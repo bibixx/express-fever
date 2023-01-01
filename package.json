@@ -1,6 +1,6 @@
 {
   "name": "express-fever",
-  "version": "0.0.0-development",
+  "version": "0.9.1",
   "author": {
     "name": "Bartosz Legięć",
     "email": "bartosz+github@legiec.io",
@@ -24,7 +24,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "microbundle",
-    "start": "microbundle watch",
+    "dev": "microbundle watch",
     "lint": "yarn run lint:tsc && yarn run lint:eslint",
     "lint:eslint": "eslint src/*",
     "lint:tsc": "tsc --noEmit"
